@@ -2,7 +2,7 @@
 /**
  *wildcmp - conducts a comparison of two strings
  *@s1: a pointer to a string parameter
- *@S2: another pointer to parameter type string
+ *@s2: another pointer to parameter type string
  *
  *Return: 0
  */
