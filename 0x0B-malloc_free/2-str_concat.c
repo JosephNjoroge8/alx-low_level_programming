@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdlib.h>
+#include <string.h>
 /**
  *str_concat - concatenates two string
  *@s1: string to merge
@@ -20,14 +21,14 @@ char *str_concat(char *s1, char *s2)
 	int len_s1 = strlen(s1);
 	int len_s2 = strlen(s2);
 	int len_concat = len_s1 + len_s2 + 1;
-	char *new_str = (char *) malloc(len_concat * sizeof(char));
+	char *new_str = malloc(len_concat * sizeof(char));
 
 	if (new_str == NULL)
 	{
-		return (0);
+		return (NULL);
 	}
 	strcpy(new_str, s1);
 	strcat(new_str, s2);
 
-	return (1);
+	return (new_str);
 }

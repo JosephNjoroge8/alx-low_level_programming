@@ -9,7 +9,7 @@
 char **strtow(char *str)
 {
 	char **matrix, *tmp;
-	int i, q = 0, len = 0, words, c = 0, start, end;
+	int i, q = 0, len = 0, words, c = 0, start = 0, end;
 
 	while (*(str + len))
 		len++;
@@ -17,7 +17,7 @@ char **strtow(char *str)
 	if (words == 0)
 		return (NULL);
 
-	matrix = (char **) malloc(sizeof(char *) * (words + 1));
+	matrix = malloc(sizeof(char *) * (words + 1));
 	if (matrix == NULL)
 		return (NULL);
 
@@ -28,9 +28,12 @@ char **strtow(char *str)
 			if (c)
 			{
 				end = i;
-				tmp = (char *) malloc(sizeof(char) * (c + 1));
+				tmp = malloc(sizeof(char) * (c + 1));
 				if (tmp == NULL)
+				{
+					free(matrix);
 					return (NULL);
+				}
 				while (start < end)
 					*tmp++ = str[start++];
 				*tmp = '\0';
@@ -62,9 +65,9 @@ int count_word(char *s)
 
 	for (g = 0; s[g] != '\0'; g++)
 	{
-		if (s[g] == '')
+		if (s[g] == ' ')
 			flow = 0;
-		else if (flag == 0)
+		else if (flow == 0)
 		{
 			flow = 1;
 			k++;
