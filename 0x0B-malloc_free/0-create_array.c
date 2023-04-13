@@ -9,17 +9,17 @@
  */
 char *create_array(unsigned int size, char c)
 {
-	char *bok;
+	char *str;
 	unsigned int i;
 
-	bok = malloc(sizeof(char) * size);
+	str = malloc(sizeof(char) * size);
 
-	if (size == 0 || bok == NULL)
+	if (size == 0 || str == NULL)
 		return (NULL);
 
 	for (i = 0; i < size; i++)
 	{
-		bok[i] = c;
+		str[i] = c;
 	}
-	return (bok);
+	return (str);
 }

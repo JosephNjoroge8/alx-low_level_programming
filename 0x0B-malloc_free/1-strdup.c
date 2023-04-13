@@ -10,17 +10,23 @@
  */
 char *_strdup(char *str)
 {
+	char *typo;
+	int i, j = 0;
+
 	if (str == NULL)
+		return (NULL);
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+
+	typo = malloc(sizeof(char) * (i + 1));
+
+	if (typo == NULL)
 	{
 		return (NULL);
 	}
-	char *new_str = (char *) malloc((strlen(str) + 1) * sizeof(char));
+	for (r = 0; str[j]; j++)
+		typo[j] = str[j];
 
-	if (new_str == NULL)
-	{
-		return (NULL);
-	}
-	strcpy(new_str, str);
-
-	return (new_str);
+	return (typo);
 }

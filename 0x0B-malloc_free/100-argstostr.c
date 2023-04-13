@@ -34,7 +34,7 @@ char *argstostr(int ac, char **av)
 		}
 		if (str[t] == '\0')
 		{
-			str[t++]= '\n';
+			str[t++] = '\n';
 		}
 	}
 	return (str);
