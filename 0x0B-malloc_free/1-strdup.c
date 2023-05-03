@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <strin
 /**
  *_strdup - returns a pointer to anewly allocated memory
  *@str: string to be copied
@@ -10,23 +10,22 @@
  */
 char *_strdup(char *str)
 {
-	char *typo;
-	int i, j = 0;
+	char *ddd;
+	int j, k = 0;
 
 	if (str == NULL)
 		return (NULL);
-	i = 0;
-	while (str[i] != '\0')
-		i++;
+	j = 0;
+	while (str[j] != '\0')
+		j++;
 
-	typo = malloc(sizeof(char) * (i + 1));
+	ddd = malloc(sizeof(char) * (j + 1));
 
-	if (typo == NULL)
-	{
+	if (ddd == NULL)
 		return (NULL);
-	}
-	for (r = 0; str[j]; j++)
-		typo[j] = str[j];
 
-	return (typo);
+	for (k = 0; str[k]; k++)
+		ddd[k] = str[k];
+
+	return (ddd);
 }
