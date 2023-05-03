@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <strin
+#include <string.h>
 /**
  *_strdup - returns a pointer to anewly allocated memory
  *@str: string to be copied
